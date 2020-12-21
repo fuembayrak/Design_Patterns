@@ -1,0 +1,29 @@
+﻿
+
+## SINGLETON PATTERN
+
+
+Tasarım desenleri arasında creational grubuna ait en popüler desendir. Uluslararası standartlarda %80 kullanım oranına sahiptir. Esas amaç her daim nesnenin kullanım süresi boyunca bir nesnenin bir kez üretilmesi (create) ve oluşturulan bu nesnenin defalarca farklı konumlarda kullanılmasını sağlamaktır.
+
+Bir başka deyişle;
+Singleton , kendi türünden yalnızca bir nesnenin var olmasını sağlayan ve diğer herhangi bir kod için ona tek bir erişim noktası sağlayan yaratıcı bir tasarım modelidir.
+
+#SINGLETON PATTERN ORTAK KULLANIM
+
+Singleton'ın tüm uygulamaları şu iki adıma ortaktır:
+
+Diğer nesnelerin newoperatörü Singleton sınıfıyla kullanmasını önlemek için varsayılan yapıcıyı özel yapın .
+Yapıcı görevi gören statik bir oluşturma yöntemi oluşturun. Temelde, bu yöntem bir nesne oluşturmak için özel oluşturucuyu çağırır ve onu statik bir alana kaydeder. Bu yönteme yapılan sonraki tüm çağrılar önbelleğe alınmış nesneyi döndürür.
+Kodunuzun Singleton sınıfına erişimi varsa, Singleton'ın statik yöntemini çağırabilir. Bu nedenle, bu yöntem her çağrıldığında, aynı nesne her zaman döndürülür.
+
+#NASIL UYGULANIR
+
+1.Tekil örneği depolamak için sınıfa özel bir statik alan ekleyin.
+
+2.Singleton örneğini almak için genel bir statik oluşturma yöntemi bildirin.
+
+3.Statik yöntemin içinde "geç başlatma" uygulayın. İlk çağrısında yeni bir nesne oluşturmalı ve onu statik alana koymalıdır. Yöntem her zaman sonraki tüm çağrılarda bu örneği döndürmelidir.
+
+4.Sınıfın yapıcısını özel yapın. Sınıfın statik yöntemi, yapıcıyı yine de çağırabilir, ancak diğer nesneleri değil.
+
+5.İstemci kodunu gözden geçirin ve singleton yapıcısına yapılan tüm doğrudan çağrıları statik oluşturma yöntemine yapılan çağrılarla değiştirin.

@@ -1,0 +1,16 @@
+﻿
+
+Builder Pattern
+
+
+Bu desende creational design pattern grubuna girmektedir. Karmaşık bir nesnenin özelliklerini gerçek yapısından ayırarak aynı yapım süreci içerisinde farklılık temsiller (delegate) yaratmaktadır. Herhangi bir builder sınıfı bir soyut IBuilder nesnesinden kalıtım alır. Ayrıca düzenin mimarisi gereği temsilden yola çıkarak farklı türlerde ürünler ortaya koymaktadır. Bir Directory'nin rolü builder sınıflarından oluşturulacak türleri çağırmak ve onları bir araya getirmek ya da direkt kullanmaktır. Yapacağımız lab uygulamalarını da incelediğimizde builder ve directory ihtiyaçlarımız kadar üretebilceğimiz nesneler olduğunu göreceksiniz. Client yani istemci belirli bir builder sınıfını yani üretmek istediği ürün tipine göre belirli bir directory için bir inşaa edici(builder) method çağırmaktadır. Yani sonuç olarak Directory Builder arayüzlerinden kalıtım parçaları bir araya getirmekle yükümlüdür.
+
+Builder Deseninde Kullanılan Mimarideki Bileşenler:
+	1. IBuilder: Neyin inşaa edileceğini tanımlayan bir arayüzdür. Üretilecek ya da bir araya getirilecek ürünü nesnelerinin uygulaması gerekir.
+	2. Builder: Concrete içerisinde barındıracağımız Builder sınıfı, ürün nesnelerimizi oluşturan nesnelerdir. Temsilci (delegate) baz alınarak farklı türler burada oluşturulur. Concrete klasörü altında bulundurulan  Builder nesneleri aynı temsilciye sahip farklı birer ürün oluşturulmasını sağlar.
+	3. Directory: Ürün oluştururken yani ürün oluşturulacak bileşenleri bir araya getirilmesi için ihtiyaç duyulan işlemler sırasını yürütür.
+	4. Delegate: Yapım aşamasında kullanılan parçalara göre oluşturulacak ürünlerin baz aldığı sınıf.
+
+
+	--Amaç
+   Builder , karmaşık nesneleri adım adım oluşturmanıza izin veren yaratıcı bir tasarım modelidir. Desen, aynı yapı kodunu kullanarak bir nesnenin farklı türlerini ve temsillerini üretmenize olanak tanır.
